@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
+
+
 export default function Music() {
 
   const [music, setMusic] = useState([]);
@@ -21,7 +23,7 @@ export default function Music() {
 
       const albums = result.topalbums.album;
 
-      console.log(result.topalbums.album)
+      // console.log(result.topalbums.album)
       if (page === 1) {
         setMusic(albums);
         return;
@@ -31,12 +33,12 @@ export default function Music() {
         
         // const current = albums;
   
-        // const newState = [
-        //   ...prev,
-        //   ...current,
-        // ]
+        const newState = [
+          ...prev,
+          ...albums,
+        ]
         
-        // return newState;
+        return newState;
       });
     }
     
@@ -58,7 +60,7 @@ export default function Music() {
   return (
     <div>
       {music && music.map((m)=> {
-        console.log(m)
+        // console.log(m)
         return (
           <Typography key={m.playcount}>{m.name}</Typography>
         )
