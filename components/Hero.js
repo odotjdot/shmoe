@@ -15,7 +15,6 @@ export default function Hero() {
       <Container>
         <Grid 
           container 
-          alignItems="center"  
           className={classes.heroInner}
           spacing={2}
         >

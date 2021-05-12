@@ -8,9 +8,15 @@ export const useStyles = makeStyles(theme => ({
   },
   heroInner: {
     height: '80vh',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
   },
   heroBanner: {
-    textAlign: 'center'
+    textAlign: 'center',
+    '& img': {
+      width: '100%',
+    }
   },
   heroContent: {
     textAlign: 'center',

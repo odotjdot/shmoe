@@ -20,7 +20,7 @@ export default function Merch() {
 
       <Grid container>
         <Grid item sm={2}>
-          <Typography>Shop</Typography>
+          <Typography variant="h5">Store</Typography>
         </Grid>
         <Grid item sm={10}>
         <Grid container spacing={3}>
@@ -30,9 +30,9 @@ export default function Merch() {
             return (
               <Grid item md={6} key={m.upc}>
                 <Paper className={classes.paper}>
-                  <img src={m.image} style={{ width: '100%'}} />
-                  <Typography>{ m.name }</Typography>
-                  <Typography>${ m.price }</Typography>
+                  <img src="https://via.placeholder.com/480?text=Buy+The+New+Single+Now" style={{ width: '100%'}} />
+                  <Typography className={classes.merchTitle}>{ m.name }</Typography>
+                  <Typography className={classes.merchPrice}>${ m.price }</Typography>
                 </Paper>
               </Grid>
             )

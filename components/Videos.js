@@ -20,7 +20,7 @@ export default function Videos() {
     <Container className={classes.videoContainer}>
       <Grid container>
         <Grid item sm={2}>
-          <Typography>Videos</Typography>
+          <Typography variant="h5">Videos</Typography>
         </Grid>
         <Grid item sm={10}>
         <Grid container spacing={3} >
