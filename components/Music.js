@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 
 
 
@@ -58,7 +60,7 @@ export default function Music() {
   // console.log(music)
   
   return (
-    <div>
+    <Container>
       {music && music.map((m)=> {
         // console.log(m)
         return (
@@ -68,6 +70,6 @@ export default function Music() {
       }
 
       <Button onClick={handleLoadMore}>Load More</Button>
-    </div>
+    </Container>
   )
 }
