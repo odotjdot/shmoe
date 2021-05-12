@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper';
 
 import Context from '../src/Context';
 
-import { useStyles } from '../src/theme';
+import { useStyles } from '../styles/videoStyles';
 
 
 export default function Videos() {
@@ -17,24 +17,33 @@ export default function Videos() {
   const { videos: { items } } = useContext(Context);
   
   return (
-    <Container>
-      <Grid container spacing={3}>
+    <Container className={classes.videoContainer}>
+      <Grid container>
+        <Grid item sm={2}>
+          <Typography>Videos</Typography>
+        </Grid>
+        <Grid item sm={10}>
+        <Grid container spacing={3} >
 
-        { items.map((item) => {
-          // console.log(item)
-          const { id, snippet } = item;
+          { items?.map((item) => {
+            console.log(item)
+            const { id, snippet } = item;
 
-          return (
-            <Grid item md key={id}>
-              <Paper className={classes.paper}>
-                <img src={snippet.thumbnails.medium.url} />
-                <Typography>{snippet.title}</Typography>
-              </Paper>
-            </Grid>
-          )
-        }) }
-      
+            return (
+              <Grid item md={4} key={id} className={classes.videoItem}>
+                <Paper className={classes.paper}>
+                  <img src={snippet.thumbnails.high.url} />
+                  <Typography>{snippet.title}</Typography>
+                </Paper>
+              </Grid>
+            )
+          }) }
+
+          </Grid>
+        </Grid>
+
       </Grid>
+      
     </Container>
   )
 }

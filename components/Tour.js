@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper';
 
 import Context from '../src/Context';
 
-import { useStyles } from '../src/theme';
+import { useStyles } from '../styles/tourStyles';
 
 
 export default function Tour() {
@@ -16,9 +16,14 @@ export default function Tour() {
   const { tour } = useContext(Context)
 
   return (
-    <Container>
+    <Container className={classes.tourContainer}>
+      <Grid container>
+        <Grid item sm={2}>
+          <Typography variant="h5">Tour Dates</Typography>
+        </Grid>
+        <Grid item sm={10}>
 
-      { tour.map((t) => {
+        { tour.map((t) => {
           
           return(
 
@@ -28,10 +33,9 @@ export default function Tour() {
               </Grid>
               <Grid item md>
                 <Typography className={classes.paper}>{t.city}</Typography>
-              </Grid>
-              <Grid item md>
                 <Typography className={classes.paper}>{t.venue}</Typography>
               </Grid>
+
               <Grid item md>
                 <Typography className={classes.paper}>BUY TICKETS</Typography>
               </Grid>
@@ -40,6 +44,13 @@ export default function Tour() {
           )
       }) }
 
+
+
+        </Grid>
+      </Grid>
+
+
+      
     </Container>
   )
 }
