@@ -26,7 +26,6 @@ export default function Videos() {
         <Grid container spacing={3} >
 
           { items?.map((item) => {
-            console.log(item)
             const { id, snippet } = item;
 
             return (
