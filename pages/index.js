@@ -33,7 +33,7 @@ export default function Index({ data }) {
 const ARTIST = process.env.NEXT_PUBLIC_ARTIST;
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
-const MUSIC_URL = `http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${ARTIST}&api_key=${API_KEY}&format=json&limit=4&page=1`;
+const MUSIC_URL = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${ARTIST}&api_key=${API_KEY}&format=json&limit=4&page=1`;
 const YT_API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=US&maxResults=3&key=${YOUTUBE_API_KEY}`;
 const MERCH_URL = 'https://fakerapi.it/api/v1/products?_quantity=4&_price_max=50.99&_price_min=10.50&_seed=12456';
 

@@ -18,7 +18,7 @@ export default function Music() {
 
   const ARTIST = process.env.NEXT_PUBLIC_ARTIST;
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-  const URL = `http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${ARTIST}&api_key=${API_KEY}&format=json&limit=4&page=${page}`;
+  const URL = `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${ARTIST}&api_key=${API_KEY}&format=json&limit=4&page=${page}`;
 
   useEffect(() => {
     
