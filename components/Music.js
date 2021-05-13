@@ -66,7 +66,6 @@ export default function Music() {
         <Grid item sm={10}>
           <Grid container justify="center" spacing={3}>
             { music && music.map((m)=> {
-              // console.log(m)
                 return (
                   
                   <Grid item key={m.playcount} sm={6}> 

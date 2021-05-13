@@ -15,7 +15,6 @@ export default function Index({ data }) {
 
   const { albums, videos, merch } = data;
 
-  console.log(data);
   return (
     <>
       <Context.Provider value={{ albums, videos, merch }}>
