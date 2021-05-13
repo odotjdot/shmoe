@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
-import Context from '../src/Context';
+import { tourDates } from '../pages/api/data';
 
 import { useStyles } from '../styles/tourStyles';
 
@@ -13,32 +13,29 @@ import { useStyles } from '../styles/tourStyles';
 export default function Tour() {
   const classes = useStyles();
 
-  const { tour } = useContext(Context)
-
   return (
-    <Container className={classes.tourContainer}>
+    <Container className={classes.tourContainer} id="TOUR" style={{ backgroundImage: `url(/images/tourbg.jpg)` }}>
       <Grid container>
         <Grid item sm={2}>
-          <Typography variant="h5">Tour Dates</Typography>
+          <Typography variant="h5" className={classes.tourSectionTitle}>Tour Dates</Typography>
         </Grid>
-        <Grid item sm={10}>
+        <Grid item container sm={10}>
 
-        { tour.map((t) => {
+        { tourDates.map((t) => {
           
           return(
 
-            <Grid container spacing={3} key={t.date}>
-              <Grid item md>
-                <Typography className={classes.paper}>{t.date}</Typography>
+            <Grid container sm={12} item spacing={3} key={t.date} className={classes.tourTable}>
+              <Grid item xs={6}>
+                <Typography className={classes.date}>{t.date}</Typography>
               </Grid>
-              <Grid item md>
-                <Typography className={classes.paper}>{t.city}</Typography>
-                <Typography className={classes.paper}>{t.venue}</Typography>
+              <Grid item xs={6} className={classes.tourDetails}>
+                <Typography className={classes.city}>{t.city}</Typography>
+                <Typography className={classes.venue}>{t.venue}</Typography>
+                <Typography className={classes.tickets}>BUY TICKETS</Typography>
               </Grid>
 
-              <Grid item md>
-                <Typography className={classes.paper}>BUY TICKETS</Typography>
-              </Grid>
+             
             </Grid>
 
           )

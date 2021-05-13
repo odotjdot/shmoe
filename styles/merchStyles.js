@@ -10,10 +10,12 @@ export const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1)
   },
   merchTitle: {
-    fontSize: '1.3rem'
+    fontSize: '1.6rem',
+    fontWeight: '300'
   },
   merchPrice: {
-    fontSize: '1.2rem'
+    fontSize: '1.4rem',
+    fontWeight: '600',
   }
   
 }));

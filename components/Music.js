@@ -29,9 +29,7 @@ export default function Music() {
 
       const albums = result.topalbums.album;
 
-      // console.log(result.topalbums.album)
       if (page === 1) {
-        // setMusic(albums);
         return;
       }
       
@@ -60,7 +58,7 @@ export default function Music() {
   }
   
   return (
-    <Container className={classes.musicContainer}>
+    <Container className={classes.musicContainer} id="MUSIC">
       <Grid container>
         <Grid item sm={2}>
           <Typography variant="h5">Music</Typography>
@@ -86,7 +84,7 @@ export default function Music() {
           <div className={classes.musicButtonContainer}>
             {page === 3 
               ? <Typography>All Loaded</Typography> 
-              : <Button onClick={handleLoadMore}>Load More</Button>
+              : <Button onClick={handleLoadMore}>View More</Button>
             }
             
           </div>

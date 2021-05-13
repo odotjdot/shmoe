@@ -15,7 +15,7 @@ export default function Merch() {
   const { merch } = useContext(Context);
 
   return (
-    <Container className={classes.merchContainer}>
+    <Container className={classes.merchContainer} id="STORE">
 
 
       <Grid container>

@@ -17,7 +17,7 @@ export const tourDates = [
   {
     date: 'Jan 20',
     city: 'Los Angeles',
-    venue: 'The Forum',
+    venue: 'Staples Center',
   },
   {
     date: 'Feb 1',

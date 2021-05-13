@@ -17,7 +17,7 @@ export default function Videos() {
   const { videos: { items } } = useContext(Context);
   
   return (
-    <Container className={classes.videoContainer}>
+    <Container className={classes.videoContainer} id="VIDEOS">
       <Grid container>
         <Grid item sm={2}>
           <Typography variant="h5">Videos</Typography>
@@ -33,7 +33,7 @@ export default function Videos() {
               <Grid item md={4} key={id} className={classes.videoItem}>
                 <Paper className={classes.paper}>
                   <img src={snippet.thumbnails.high.url} />
-                  <Typography>{snippet.title}</Typography>
+                  <Typography className={classes.videoTitle}>{snippet.title}</Typography>
                 </Paper>
               </Grid>
             )

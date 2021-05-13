@@ -13,20 +13,18 @@ import Tour from '../components/Tour';
 
 export default function Index({ data }) {
 
-  const { albums, videos, merch, tour } = data;
+  const { albums, videos, merch } = data;
 
   console.log(data);
   return (
     <>
-      <Context.Provider value={{ albums, videos, merch, tour }}>
-        <Container disableGutters={true}>
-          <Nav />
-          <Hero />
+      <Context.Provider value={{ albums, videos, merch }}>
+        <Nav />
+        <Hero />
           <Music />
           <Tour />
           <Videos />
           <Merch />
-        </Container>
       </Context.Provider>
     </>
   );
@@ -39,7 +37,6 @@ const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
 const MUSIC_URL = `http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${ARTIST}&api_key=${API_KEY}&format=json&limit=4&page=1`;
 const YT_API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=US&maxResults=3&key=${YOUTUBE_API_KEY}`;
 const MERCH_URL = 'https://fakerapi.it/api/v1/products?_quantity=4&_price_max=50.99&_price_min=10.50&_seed=12456';
-const TOUR_URL = 'http://localhost:3000/api/tourDates';
 
 const getMusic = async () => {
   const response = await fetch(MUSIC_URL);
@@ -60,27 +57,19 @@ const getMerch = async () => {
   return result;
 }
 
-const getTour = async () => {
-  const response = await fetch(TOUR_URL);
-  const result = await response.json();
-  return result;
-}
-
 export async function getStaticProps() {
 
   const data = await Promise.all([
     getMusic(),
     getVideos(),
     getMerch(),
-    getTour(),
   ])
-  .then(([musicPromise, videosPromise, merchPromise, tourPromise ]) => {
+  .then(([musicPromise, videosPromise, merchPromise ]) => {
     const albums = musicPromise.topalbums.album;
     const videos = videosPromise;
     const merch = merchPromise.data;
-    const tour = tourPromise;
     
-    return { albums, videos, merch, tour }
+    return { albums, videos, merch }
   })
   .catch(err => {
     console.error(err);

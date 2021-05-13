@@ -11,7 +11,8 @@ export default function Hero() {
   const classes = useStyles();
 
   return (
-    <Container disableGutters className={classes.hero}>
+    <div className={classes.hero} style={{ backgroundImage: `url(/images/herobg.jpg)` }}>
+    <Container disableGutters>
       <Container>
         <Grid 
           container 
@@ -29,5 +30,6 @@ export default function Hero() {
         </Grid>
       </Container>
     </Container>
+    </div>
   )
 }

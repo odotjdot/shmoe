@@ -11,6 +11,10 @@ export const useStyles = makeStyles(theme => ({
       width: '100%',
     }
   },
+  videoTitle: {
+    fontSize: '1.15rem',
+    fontWeight: 'bold'
+  },
   paper: {
     padding: theme.spacing(1)
   }
