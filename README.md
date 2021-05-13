@@ -8,3 +8,5 @@ Install it and run:
 npm install
 npm run dev
 ```
+
+Live Demo: https://shmoe.vercel.app/
