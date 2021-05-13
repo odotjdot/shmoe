@@ -9,11 +9,19 @@ export const useStyles = makeStyles(theme => ({
   videoItem: {
     '& img': {
       width: '100%',
+    },
+    '& a': {
+      color: 'black',
+      textDecoration: 'none',
     }
+  },
+  videoItemLink: {
+    textDecoration: 'none',
   },
   videoTitle: {
     fontSize: '1.15rem',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    
   },
   paper: {
     padding: theme.spacing(1)
