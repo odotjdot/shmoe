@@ -20,6 +20,9 @@ export const useStyles = makeStyles(theme => ({
       left: '0',
       zIndex: '2',
       background: 'linear-gradient(174deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 100%);',
+    },
+    '& select': {
+      color: 'white'
     }
   },
   tourTable: {
@@ -47,6 +50,24 @@ export const useStyles = makeStyles(theme => ({
     color: 'white',
     position: 'relative',
     zIndex: '10',
+  },
+  formControl: {
+    margin: theme.spacing(1, 0),
+    minWidth: 120,
+    color: 'white',
+    zIndex: '11',
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+  whiteText: {
+    color: 'white',
+  },
+  whiteBorder: {
+
+    '& before': {
+      borderBottomColor: 'white',
+    }
   }
   
 }));

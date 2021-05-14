@@ -20,10 +20,10 @@ export default function Index({ data }) {
       <Context.Provider value={{ albums, videos, merch }}>
         <Nav />
         <Hero />
-          <Music />
-          <Tour />
-          <Videos />
-          <Merch />
+        <Music />
+        <Tour />
+        <Videos />
+        <Merch />
       </Context.Provider>
     </>
   );
