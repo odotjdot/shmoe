@@ -68,6 +68,18 @@ export const useStyles = makeStyles(theme => ({
     '& before': {
       borderBottomColor: 'white',
     }
+  },
+  chartContainer: {
+    position: 'relative',
+    zIndex: '10',
+  },
+  chartTitle: {
+    position: 'relative',
+    zIndex: '10',
+    textAlign: 'center',
+    width: '100%',
+    margin: theme.spacing(8, 0),
+    fontWeight: '500',
   }
   
 }));

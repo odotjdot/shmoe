@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -31,6 +32,20 @@ export default function Tour() {
   const handleCityChange = (event) => {
     setTourCity(event.target.value)
   }
+
+  const cityChartXaxis = singleCities.map((sc) => {
+    const currentCity = sc.city;
+
+    const numberArr = tourDates.filter( c => {
+        return currentCity === c.city;
+    });
+
+    return { 
+      cityName: currentCity,
+      numOfDates: numberArr.length,
+    }
+  });
+
 
   useEffect(()=> {
     const newDates = tourDates.filter( c => {
@@ -111,8 +126,16 @@ export default function Tour() {
 
           )
       }) }
-
-
+          <Typography variant="h4" className={classes.chartTitle}>Show Chart</Typography>
+          <ResponsiveContainer className={classes.chartContainer} width="100%" height={350} >
+            <BarChart data={cityChartXaxis}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#5e5c5d"/>
+              <XAxis dataKey="cityName" tick={{fill: 'white'}}/>
+              <YAxis tick={{fill: 'white'}} />
+              <Legend />
+              <Bar dataKey="numOfDates" fill="#94000f" name="Number Of Dates" />
+            </BarChart>
+          </ResponsiveContainer>
 
         </Grid>
       </Grid>
